@@ -1,0 +1,6 @@
+framework module EasyPull {
+  umbrella header "EasyPull-umbrella.h"
+
+  export *
+  module * { export * }
+}
