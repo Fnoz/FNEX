@@ -24,7 +24,7 @@ class ViewController: UINavigationController, UITableViewDelegate, UITableViewDa
         self.view.addSubview(tableView)
         
         func delayStopDrop() {
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), { () -> Void in
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), { () -> Void in
                 self.tableView.reloadData()
                 self.tableView.easy_stopDropPull()
             })
