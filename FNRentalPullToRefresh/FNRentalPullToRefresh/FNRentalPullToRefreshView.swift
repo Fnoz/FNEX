@@ -14,6 +14,7 @@ public class FNRentalPullToRefreshHeaderView: UIView, EasyViewManual, EasyViewAu
     let sky :UIImageView = UIImageView()
     let building : UIImageView = UIImageView()
     let sun : UIImageView = UIImageView()
+    let sunContainer : UIView = UIView()
     var isAnimating = false
     
     override init(frame: CGRect) {
@@ -30,12 +31,9 @@ public class FNRentalPullToRefreshHeaderView: UIView, EasyViewManual, EasyViewAu
             resetManual()
         }
         print(progress)
-        var rect = sun.frame;
-        rect.origin.y = (1-progress*0.9)*frame.size.height
-        sun.frame = rect
-        let scale = ((35/25.0-1)*progress * 25 + 25)/35
-        sun.transform = CGAffineTransformRotate(CGAffineTransformMakeScale(scale, scale), 0)
-        
+        sunContainer.center = CGPointMake(sunContainer.center.x, (1-progress * 0.7) * frame.size.height)
+        let scale = ((35/15.0-1)*progress * 15 + 15)/35
+        sun.transform = CGAffineTransformRotate(CGAffineTransformMakeScale(scale, scale), 2 * CGFloat(M_PI) * progress)
         sky.transform = CGAffineTransformMakeTranslation(0, (1 - progress) * 20)
     }
     
@@ -95,9 +93,12 @@ public class FNRentalPullToRefreshHeaderView: UIView, EasyViewManual, EasyViewAu
         addSubview(sky)
         sky.transform = CGAffineTransformMakeTranslation(0, 20)
         
-        sun.frame = CGRectMake(bounds.size.width/3.5, sky.frame.size.height, 35, 35)
+        sunContainer.frame = CGRectMake(bounds.size.width/3.5, 35, 50, 50)
+        addSubview(sunContainer)
+        
+        sun.frame = CGRectMake(7.5, 7.5, 35, 35)
         sun.image = UIImage.init(named: "sun")
-        addSubview(sun)
+        sunContainer.addSubview(sun)
         
         building.frame = CGRectMake(0, bounds.size.height - 72, bounds.size.width, 72)
         building.image = UIImage.init(named: "buildings")
