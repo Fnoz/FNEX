@@ -30,12 +30,11 @@ class ViewController: UINavigationController, UITableViewDelegate, UITableViewDa
             })
         }
         
-        let customDropView = FNRentalPullToRefreshHeaderView.init(frame: CGRectMake(0, -110, self.view.frame.size.width, 110))
+        let customDropView = FNRentalPullToRefreshHeaderView.init(frame: CGRectMake(0, -110, view.frame.size.width, 110))
         tableView.easy_addDropPull({ 
             NSLog("Run")
             delayStopDrop()
-            }, customDropView: customDropView);
-        
+            }, customDropView: customDropView)
         
     }
 
