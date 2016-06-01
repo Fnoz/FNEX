@@ -31,11 +31,12 @@ public class FNRentalPullToRefreshHeaderView: UIView, EasyViewManual, EasyViewAu
         }
         print(progress)
         var rect = sun.frame;
-        rect.size.width = (42/28.0-1)*progress * 28 + 28
-        rect.size.height = (42/28.0-1)*progress * 28 + 28
         rect.origin.y = (1-progress*0.9)*frame.size.height
-        rect.origin.x = bounds.size.width/3 - (42/28.0-1)*progress * 28 / 2
         sun.frame = rect
+        let scale = ((35/25.0-1)*progress * 25 + 25)/35
+        sun.transform = CGAffineTransformRotate(CGAffineTransformMakeScale(scale, scale), 0)
+        
+        sky.transform = CGAffineTransformMakeTranslation(0, (1 - progress) * 20)
     }
     
     public func showManualPullingOver() {
@@ -50,14 +51,28 @@ public class FNRentalPullToRefreshHeaderView: UIView, EasyViewManual, EasyViewAu
             rotationAnimation.removedOnCompletion = false
             rotationAnimation.fillMode = kCAFillModeForwards
             sun.layer.addAnimation(rotationAnimation, forKey: "rotationAnimation")
+            
+            UIView.animateWithDuration(0.9) {
+                self.sky.transform = CGAffineTransformMakeScale(1.1, 1.1)
+                self.building.transform = CGAffineTransformTranslate(CGAffineTransformMakeScale(1.2, 1.2), 0, -6)
+                self.sun.transform = CGAffineTransformMakeScale(0.8, 0.8)
+            }
         }
     }
     
-    public func showManualExcuting() {}
+    public func showManualExcuting() {
+    
+    }
     
     public func resetManual() {
         isAnimating = false
         sun.layer.removeAllAnimations()
+        UIView.animateWithDuration(0.9) {
+            self.sky.transform = CGAffineTransformMakeScale(1, 1)
+            self.building.transform = CGAffineTransformTranslate(CGAffineTransformMakeScale(1, 1), 0, 0)
+            self.sun.transform = CGAffineTransformMakeScale(1, 1)
+            self.sky.transform = CGAffineTransformMakeTranslation(0, 20)
+        }
     }
     
     public func showAutomaticPulling(progress: CGFloat) {
@@ -75,11 +90,12 @@ public class FNRentalPullToRefreshHeaderView: UIView, EasyViewManual, EasyViewAu
     private func initView() {
         clipsToBounds = true
         
-        sky.frame = bounds
+        sky.frame = CGRectMake(0, 0, frame.size.width, frame.size.height)
         sky.image = UIImage.init(named: "sky")
         addSubview(sky)
+        sky.transform = CGAffineTransformMakeTranslation(0, 20)
         
-        sun.frame = CGRectMake(bounds.size.width/3, sky.frame.size.height, 42, 42)
+        sun.frame = CGRectMake(bounds.size.width/3.5, sky.frame.size.height, 35, 35)
         sun.image = UIImage.init(named: "sun")
         addSubview(sun)
         
