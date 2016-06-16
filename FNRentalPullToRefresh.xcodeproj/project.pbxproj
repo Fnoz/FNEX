@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		108042EF1D12344A00D3F37C /* FNAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 108042EE1D12344A00D3F37C /* FNAssets.xcassets */; };
 		10ABCDF51CEF5F8100E6F0C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ABCDF41CEF5F8100E6F0C2 /* AppDelegate.swift */; };
 		10ABCDF71CEF5F8100E6F0C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10ABCDF61CEF5F8100E6F0C2 /* ViewController.swift */; };
 		10ABCDFA1CEF5F8100E6F0C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10ABCDF81CEF5F8100E6F0C2 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		108042EE1D12344A00D3F37C /* FNAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FNAssets.xcassets; sourceTree = "<group>"; };
 		10ABCDF11CEF5F8100E6F0C2 /* FNRentalPullToRefresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FNRentalPullToRefresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10ABCDF41CEF5F8100E6F0C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10ABCDF61CEF5F8100E6F0C2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 		10ABCE061CF0393C00E6F0C2 /* FNRentalPullToRefresh */ = {
 			isa = PBXGroup;
 			children = (
+				108042EE1D12344A00D3F37C /* FNAssets.xcassets */,
 				10ABCE071CF0394700E6F0C2 /* FNRentalPullToRefreshView.swift */,
 			);
 			path = FNRentalPullToRefresh;
@@ -163,6 +166,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				108042EF1D12344A00D3F37C /* FNAssets.xcassets in Resources */,
 				10ABCDFF1CEF5F8100E6F0C2 /* LaunchScreen.storyboard in Resources */,
 				10ABCDFC1CEF5F8100E6F0C2 /* Assets.xcassets in Resources */,
 				10ABCDFA1CEF5F8100E6F0C2 /* Main.storyboard in Resources */,
