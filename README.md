@@ -1,5 +1,5 @@
 # FNRentalPullToRefresh
-Swift - Animation - Daily NO.02.
+用Swift实现的Yalantis的Pull-to-Refresh.Rentals-iOS下拉刷新动画.
 
 ###基础使用Demo：
 
