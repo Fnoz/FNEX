@@ -55,4 +55,8 @@ class FNEXUtil {
         }
         return array
     }
+    
+    class func fnexFont(size: CGFloat) -> UIFont {
+        return UIFont.init(name: "Courier", size: size)!
+    }
 }

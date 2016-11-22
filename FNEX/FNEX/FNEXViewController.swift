@@ -60,7 +60,7 @@ class FNEXViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(handleTap(tap:)))
         view.addGestureRecognizer(tapGesture)
         
-        toolBar = FNEXToolBar.init(frame: CGRect.init(x: 0, y: 100, width: view.frame.width, height: 64), iconArray: [UIImage.init(named: "cursor")!, UIImage.init(named: "collect")!, UIImage.init(named: "flow")!, UIImage.init(named: "close")!])
+        toolBar = FNEXToolBar.init(frame: CGRect.init(x: 0, y: 64, width: view.frame.width, height: 84), iconArray: [UIImage.init(named: "cursor")!, UIImage.init(named: "collect")!, UIImage.init(named: "flow")!, UIImage.init(named: "close")!])
         view.addSubview(toolBar!)
         fnexToolBarClickedBlock = {[unowned self] (btnIndexNumber:NSNumber) in
             switch btnIndexNumber.intValue {
@@ -129,7 +129,10 @@ class FNEXViewController: UIViewController {
     func updateSelectedViewInfo() {
         let frame = selectedView?.convert((selectedView?.bounds)!, to: selectedView?.window)
         highLightFrameView?.frame = frame!
-        toolBar?.descFrame = (selectedView?.frame)!
+        
+        toolBar?.xLabel?.text = "\(type(of: selectedView!)): \((selectedView!.frame))"
+        toolBar?.yLabel?.text = "\(type(of: selectedView!.superview!)): \((selectedView!.superview!.frame))"
+
         
         highLightHorizonalEdgeLine0?.center = CGPoint.init(x: (highLightHorizonalEdgeLine0?.center.x)!, y: (frame?.minY)!)
         highLightHorizonalEdgeLine1?.center = CGPoint.init(x: (highLightHorizonalEdgeLine0?.center.x)!, y: (frame?.maxY)!)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10A317261DE2FFE700DCE2CE /* FNEXTreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A317251DE2FFE700DCE2CE /* FNEXTreeTableViewCell.swift */; };
 		10C2B63B1DD382F5001C1B04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10C2B63A1DD382F5001C1B04 /* Assets.xcassets */; };
 		10C2B63D1DD38B2F001C1B04 /* FNEXTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C2B63C1DD38B2F001C1B04 /* FNEXTreeViewController.swift */; };
 		10C880E01DD1B0FC00BC21E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C880DF1DD1B0FC00BC21E6 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10A317251DE2FFE700DCE2CE /* FNEXTreeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FNEXTreeTableViewCell.swift; sourceTree = "<group>"; };
 		10C2B63A1DD382F5001C1B04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10C2B63C1DD38B2F001C1B04 /* FNEXTreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FNEXTreeViewController.swift; sourceTree = "<group>"; };
 		10C880DC1DD1B0FC00BC21E6 /* FNEX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FNEX.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +88,7 @@
 				10C880F41DD1B29200BC21E6 /* FNEXWindow.swift */,
 				10C880F61DD1B39200BC21E6 /* FNEXViewController.swift */,
 				10C2B63C1DD38B2F001C1B04 /* FNEXTreeViewController.swift */,
+				10A317251DE2FFE700DCE2CE /* FNEXTreeTableViewCell.swift */,
 				10C880FA1DD1C5D600BC21E6 /* FNEXToolBar.swift */,
 				10C880F81DD1BA6900BC21E6 /* FNEXUtil.swift */,
 				10EFD0271DD1CD5F00DDE395 /* FNEX.xcassets */,
@@ -168,6 +171,7 @@
 			files = (
 				10C880E21DD1B0FC00BC21E6 /* ViewController.swift in Sources */,
 				10C880F51DD1B29200BC21E6 /* FNEXWindow.swift in Sources */,
+				10A317261DE2FFE700DCE2CE /* FNEXTreeTableViewCell.swift in Sources */,
 				10C880F91DD1BA6900BC21E6 /* FNEXUtil.swift in Sources */,
 				10C880E01DD1B0FC00BC21E6 /* AppDelegate.swift in Sources */,
 				10C880F31DD1B24000BC21E6 /* FNEX.swift in Sources */,

@@ -19,19 +19,10 @@ var fnexToolBarClickedBlock = { (btnIndexNumber:NSNumber) in
 class FNEXToolBar: UIView {
     var startRect: CGRect?
     var iconArray: NSArray = []
-    var descFrame = CGRect.zero {
-        didSet {
-            xLabel?.text = String.init(format: "x:%@", NSNumber.init(value: Double(descFrame.origin.x)))
-            yLabel?.text = String.init(format: "y:%@", NSNumber.init(value: Double(descFrame.origin.y)))
-            wLabel?.text = String.init(format: "w:%@", NSNumber.init(value: Double(descFrame.width)))
-            hLabel?.text = String.init(format: "h:%@", NSNumber.init(value: Double(descFrame.height)))
-        }
-    }
+
     private var selectFlagView: UIView?
-    private var xLabel: UILabel?
-    private var yLabel: UILabel?
-    private var wLabel: UILabel?
-    private var hLabel: UILabel?
+    var xLabel: UILabel?
+    var yLabel: UILabel?
     
     init(frame: CGRect, iconArray:Array<Any>) {
         super.init(frame: frame)
@@ -44,7 +35,8 @@ class FNEXToolBar: UIView {
         
         var iconArrayAll = iconArray
         iconArrayAll.insert(UIImage.init(named: "menu")!, at: 0)
-        let btnWidth = Double(UIScreen.main.bounds.width) / Double(iconArrayAll.count)
+        let screenWidth = UIScreen.main.bounds.width
+        let btnWidth = Double(screenWidth) / Double(iconArrayAll.count)
         for index in 0 ... iconArrayAll.count - 1 {
             let btn = UIButton.init(frame: CGRect.init(x: btnWidth * Double(index), y: 0, width: btnWidth, height: 44))
             btn.tag = tagOri + index
@@ -72,30 +64,27 @@ class FNEXToolBar: UIView {
         addSubview(selectFlagView!)
         
         
-        let point = UIView.init(frame: CGRect.init(x: 12, y: 51, width: 6, height: 6))
-        point.backgroundColor = .red
-        point.layer.cornerRadius = 3
-        addSubview(point)
+        let point0 = UIView.init(frame: CGRect.init(x: 12, y: 51, width: 6, height: 6))
+        point0.backgroundColor = .red
+        point0.layer.cornerRadius = 3
+        addSubview(point0)
         
-        xLabel = UILabel.init(frame: CGRect.init(x: 30, y: 44, width: 70, height: 20))
-        xLabel?.font = UIFont.systemFont(ofSize: 14)
+        xLabel = UILabel.init(frame: CGRect.init(x: 30, y: 44, width: screenWidth - 30, height: 20))
+        xLabel?.font = FNEXUtil.fnexFont(size: 12)
         xLabel?.textColor = .gray
+        xLabel?.text = "Select a view first"
         addSubview(xLabel!)
         
-        yLabel = UILabel.init(frame: CGRect.init(x: 30 + 70, y: 44, width: 70, height: 20))
-        yLabel?.font = UIFont.systemFont(ofSize: 14)
+        let point1 = UIView.init(frame: CGRect.init(x: 12, y: 51 + 20, width: 6, height: 6))
+        point1.backgroundColor = .green
+        point1.layer.cornerRadius = 3
+        addSubview(point1)
+        
+        yLabel = UILabel.init(frame: CGRect.init(x: 30, y: 44 + 20, width: screenWidth - 30, height: 20))
+        yLabel?.font = FNEXUtil.fnexFont(size: 12)
         yLabel?.textColor = .gray
+        yLabel?.text = "And just play!"
         addSubview(yLabel!)
-        
-        wLabel = UILabel.init(frame: CGRect.init(x: 30 + 140, y: 44, width: 70, height: 20))
-        wLabel?.font = UIFont.systemFont(ofSize: 14)
-        wLabel?.textColor = .gray
-        addSubview(wLabel!)
-        
-        hLabel = UILabel.init(frame: CGRect.init(x: 30 + 210, y: 44, width: 70, height: 20))
-        hLabel?.font = UIFont.systemFont(ofSize: 14)
-        hLabel?.textColor = .gray
-        addSubview(hLabel!)
     }
     
     @objc func handlePan(pan: UIPanGestureRecognizer) {

@@ -21,19 +21,21 @@ class FNEXTreeViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         
-        let backBtn = UIButton.init(frame: CGRect.init(x: 0, y: 20, width: 60, height: 44))
+        let backBtn = UIButton.init(frame: CGRect.init(x: 0, y: 10, width: 60, height: 44))
         backBtn.setTitle("Back", for: .normal)
-        backBtn.setTitleColor(UIColor.init(colorLiteralRed: 1/255.0, green: 188/255.0, blue: 212/255.0, alpha: 1), for: .normal)
+        backBtn.setTitleColor(UIColor.init(red: 2/255.0, green: 185/255.0, blue: 209/255.0, alpha: 1), for: .normal)
+        backBtn.titleLabel?.font = FNEXUtil.fnexFont(size: (backBtn.titleLabel?.font.pointSize)!)
         backBtn.addTarget(self, action: #selector(back), for: .touchUpInside)
         view.addSubview(backBtn)
         
-        tableView = UITableView.init(frame: CGRect.init(x: 0, y: 64, width: view.frame.width, height: view.frame.height - 64), style: .plain)
+        tableView = UITableView.init(frame: CGRect.init(x: 0, y: 44, width: view.frame.width, height: view.frame.height - 44), style: .plain)
         tableView?.delegate = self
         tableView?.dataSource = self
         tableView?.separatorStyle = .singleLine
         tableView?.tableFooterView = UIView()
-        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
+        tableView?.register(FNEXTreeTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(FNEXTreeTableViewCell.self))
         view.addSubview(tableView!)
     }
     
@@ -56,27 +58,22 @@ class FNEXTreeViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var prefix = ""
-        for _ in 0 ... indexPath.row {
-            prefix.append("  ")
-        }
-        prefix.append("- ")
         
         let view = viewArray?[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self))
-        cell?.textLabel?.text = prefix.appending("\(NSStringFromClass((view?.classForCoder)!))")
-        cell?.selectionStyle = .none
+        let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(FNEXTreeTableViewCell.self)) as! FNEXTreeTableViewCell
+        cell.loadInfo(byView: view!, leftMargin: (15 + 10 * Double(indexPath.row)))
+        cell.selectionStyle = .none
         
         switch (viewArray?.count)! - indexPath.row {
         case 1:
-            cell?.contentView.backgroundColor = UIColor.init(red: 1, green: 0, blue: 0, alpha: 0.3)
+            cell.contentView.backgroundColor = UIColor.init(red: 1, green: 0, blue: 0, alpha: 0.3)
         case 2:
-            cell?.contentView.backgroundColor = UIColor.init(red: 0, green: 1, blue: 0, alpha: 0.3)
+            cell.contentView.backgroundColor = UIColor.init(red: 0, green: 1, blue: 0, alpha: 0.3)
         default:
-            cell?.contentView.backgroundColor = .white
+            cell.contentView.backgroundColor = .white
         }
         
-        return cell!
+        return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
