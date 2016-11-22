@@ -35,8 +35,7 @@ class FNEXToolBar: UIView {
         
         var iconArrayAll = iconArray
         iconArrayAll.insert(UIImage.init(named: "menu")!, at: 0)
-        let screenWidth = UIScreen.main.bounds.width
-        let btnWidth = Double(screenWidth) / Double(iconArrayAll.count)
+        let btnWidth = Double(kScreenWidth) / Double(iconArrayAll.count)
         for index in 0 ... iconArrayAll.count - 1 {
             let btn = UIButton.init(frame: CGRect.init(x: btnWidth * Double(index), y: 0, width: btnWidth, height: 44))
             btn.tag = tagOri + index
@@ -69,7 +68,7 @@ class FNEXToolBar: UIView {
         point0.layer.cornerRadius = 3
         addSubview(point0)
         
-        xLabel = UILabel.init(frame: CGRect.init(x: 30, y: 44, width: screenWidth - 30, height: 20))
+        xLabel = UILabel.init(frame: CGRect.init(x: 30, y: 44, width: kScreenWidth - 30, height: 20))
         xLabel?.font = FNEXUtil.fnexFont(size: 12)
         xLabel?.textColor = .gray
         xLabel?.text = "Select a view first"
@@ -80,7 +79,7 @@ class FNEXToolBar: UIView {
         point1.layer.cornerRadius = 3
         addSubview(point1)
         
-        yLabel = UILabel.init(frame: CGRect.init(x: 30, y: 44 + 20, width: screenWidth - 30, height: 20))
+        yLabel = UILabel.init(frame: CGRect.init(x: 30, y: 44 + 20, width: kScreenWidth - 30, height: 20))
         yLabel?.font = FNEXUtil.fnexFont(size: 12)
         yLabel?.textColor = .gray
         yLabel?.text = "And just play!"

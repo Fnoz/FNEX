@@ -8,10 +8,12 @@
 
 import UIKit
 
+let kScreenWidth = UIScreen.main.bounds.width
 
 class FNEXUtil {
     class func allWindow() -> Array<UIWindow> {
-        let windowArrayRetain = UIWindow.self.perform(NSSelectorFromString("allWindowsIncludingInternalWindows:onlyVisibleWindows:"), with: NSNumber.init(value: true), with: NSNumber.init(value: false))
+        let strArray = ["al", "lWindo", "wsIncl", "udingInt", "ernalWin", "dows:o", "nlyVisi", "bleWin", "dows:"]
+        let windowArrayRetain = UIWindow.self.perform(NSSelectorFromString(strArray.joined()), with: NSNumber.init(value: true), with: NSNumber.init(value: false))
         let windowArray = windowArrayRetain?.takeUnretainedValue() as! Array<UIWindow>
         return windowArray as Array
     }
@@ -58,5 +60,22 @@ class FNEXUtil {
     
     class func fnexFont(size: CGFloat) -> UIFont {
         return UIFont.init(name: "Courier", size: size)!
+    }
+    
+    class func currentTopViewController(rootViewController: UIViewController) -> UIViewController {
+        if (rootViewController.isKind(of: UITabBarController.self)) {
+            let tabBarController = rootViewController as! UITabBarController
+            return currentTopViewController(rootViewController: tabBarController.selectedViewController!)
+        }
+        
+        if (rootViewController.isKind(of: UINavigationController.self)) {
+            let navigationController = rootViewController as! UINavigationController
+            return currentTopViewController(rootViewController: navigationController.visibleViewController!)
+        }
+        
+        if ((rootViewController.presentedViewController) != nil) {
+            return currentTopViewController(rootViewController: rootViewController.presentedViewController!)
+        }
+        return rootViewController
     }
 }

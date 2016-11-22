@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		107C83BD1DE48F98003750BB /* FNEXInfoParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107C83BC1DE48F98003750BB /* FNEXInfoParser.swift */; };
 		10A317261DE2FFE700DCE2CE /* FNEXTreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A317251DE2FFE700DCE2CE /* FNEXTreeTableViewCell.swift */; };
 		10C2B63B1DD382F5001C1B04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10C2B63A1DD382F5001C1B04 /* Assets.xcassets */; };
 		10C2B63D1DD38B2F001C1B04 /* FNEXTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C2B63C1DD38B2F001C1B04 /* FNEXTreeViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		107C83BC1DE48F98003750BB /* FNEXInfoParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FNEXInfoParser.swift; sourceTree = "<group>"; };
 		10A317251DE2FFE700DCE2CE /* FNEXTreeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FNEXTreeTableViewCell.swift; sourceTree = "<group>"; };
 		10C2B63A1DD382F5001C1B04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10C2B63C1DD38B2F001C1B04 /* FNEXTreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FNEXTreeViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				10A317251DE2FFE700DCE2CE /* FNEXTreeTableViewCell.swift */,
 				10C880FA1DD1C5D600BC21E6 /* FNEXToolBar.swift */,
 				10C880F81DD1BA6900BC21E6 /* FNEXUtil.swift */,
+				107C83BC1DE48F98003750BB /* FNEXInfoParser.swift */,
 				10EFD0271DD1CD5F00DDE395 /* FNEX.xcassets */,
 			);
 			path = FNEX;
@@ -128,7 +131,8 @@
 				TargetAttributes = {
 					10C880DB1DD1B0FC00BC21E6 = {
 						CreatedOnToolsVersion = 8.0;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = X3664LTV52;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -172,6 +176,7 @@
 				10C880E21DD1B0FC00BC21E6 /* ViewController.swift in Sources */,
 				10C880F51DD1B29200BC21E6 /* FNEXWindow.swift in Sources */,
 				10A317261DE2FFE700DCE2CE /* FNEXTreeTableViewCell.swift in Sources */,
+				107C83BD1DE48F98003750BB /* FNEXInfoParser.swift in Sources */,
 				10C880F91DD1BA6900BC21E6 /* FNEXUtil.swift in Sources */,
 				10C880E01DD1B0FC00BC21E6 /* AppDelegate.swift in Sources */,
 				10C880F31DD1B24000BC21E6 /* FNEX.swift in Sources */,
@@ -224,9 +229,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Fnoz Ita (8E5P85U965)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Fnoz Ita (8E5P85U965)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = X3664LTV52;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -273,9 +280,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Fnoz Ita (8E5P85U965)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Fnoz Ita (8E5P85U965)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = X3664LTV52;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -298,10 +307,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Fnoz Ita (8E5P85U965)";
+				DEVELOPMENT_TEAM = X3664LTV52;
 				INFOPLIST_FILE = FNEX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Fnoz.FNEX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e3e5ffd9-3549-4fd1-ba90-fb196e037b30";
+				PROVISIONING_PROFILE_SPECIFIER = "Fnoz Dev.";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -310,10 +323,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Fnoz Ita (8E5P85U965)";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FNEX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Fnoz.FNEX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
