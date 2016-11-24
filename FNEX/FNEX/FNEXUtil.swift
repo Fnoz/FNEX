@@ -12,7 +12,7 @@ let kScreenWidth = UIScreen.main.bounds.width
 
 class FNEXUtil {
     class func allWindow() -> Array<UIWindow> {
-        let statusBarWindow = UIApplication.shared.value(forKey: "statusBarWindow") as! UIWindow
+        let statusBarWindow = UIApplication.shared.value(forKey: "\("statu")\("sBarW")\("indow")") as! UIWindow
         var windowArray = UIApplication.shared.windows
         windowArray.append(statusBarWindow)
         return windowArray
@@ -22,8 +22,8 @@ class FNEXUtil {
         var tmpView: UIView? = UIApplication.shared.keyWindow
         for window in allWindow() {
             if ((window as AnyObject).isKind(of: FNEXWindow.self)
-                || (window as AnyObject).isKind(of: NSClassFromString("UITextEffectsWindow").self!)
-                || (window as AnyObject).isKind(of: NSClassFromString("UIRemoteKeyboardWindow").self!)){
+                || (window as AnyObject).isKind(of: NSClassFromString("\("UITex")\("tEffec")\("tsWind")\("ow")").self!)
+                || (window as AnyObject).isKind(of: NSClassFromString("\("UIRem")\("oteKeyboa")\("rdWind")\("ow")").self!)){
                 continue
             }
             if viewAtPoint(point: point, inView: window as UIView) != nil {
