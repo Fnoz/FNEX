@@ -131,7 +131,12 @@ class FNEXViewController: UIViewController {
         highLightFrameView?.frame = frame!
         
         toolBar?.xLabel?.text = "\(type(of: selectedView!)): \((selectedView!.frame))"
-        toolBar?.yLabel?.text = "\(type(of: selectedView!.superview!)): \((selectedView!.superview!.frame))"
+        if selectedView!.superview != nil {
+            toolBar?.yLabel?.text = "\(type(of: selectedView!.superview!)): \((selectedView!.superview!.frame))"
+        }
+        else {
+            toolBar?.yLabel?.text = "No SuperView"
+        }
 
         
         highLightHorizonalEdgeLine0?.center = CGPoint.init(x: (highLightHorizonalEdgeLine0?.center.x)!, y: (frame?.minY)!)

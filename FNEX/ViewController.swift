@@ -37,6 +37,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         view3.backgroundColor = .green
         view3.center = CGPoint.init(x: view2.bounds.width * 0.5, y: view2.bounds.height * 0.5)
         view2.addSubview(view3)
+        
+        let textfield = UITextField.init(frame: CGRect.init(x: 0, y: 0, width: view3.frame.width - 44, height: view3.frame.height - 44))
+        textfield.backgroundColor = .white
+        textfield.center = CGPoint.init(x: view3.bounds.width * 0.5, y: view3.bounds.height * 0.5)
+        view3.addSubview(textfield)
                 
         let tableView = UITableView.init(frame: CGRect.init(x: 0, y: 64, width: view.frame.width, height: view.frame.height - 64), style: .plain)
         tableView.delegate = self
